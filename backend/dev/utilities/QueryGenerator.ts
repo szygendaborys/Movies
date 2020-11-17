@@ -12,11 +12,11 @@ abstract class QueryGenerator {
         if(opts) this._opts = Object.assign(this._opts, opts);
     }
 
-    protected _getURL(query:{[key:string]:any}, requireApiKey:boolean = false):string {
+    protected _getURL(query:{[key:string]:string}, requireApiKey:boolean = false):string {
         return `${this._api}/${this._generateQueryEntries(query, requireApiKey)}`
     }
 
-    protected _generateQueryEntries(queryParams:{[key:string]:any}, requireApiKey:boolean = false):string {
+    protected _generateQueryEntries(queryParams:{[key:string]:string}, requireApiKey:boolean = false):string {
         let query = ``;
 
         if(requireApiKey) query += `&apikey=${encodeURIComponent(this._opts.apikey)}`;
@@ -25,7 +25,7 @@ abstract class QueryGenerator {
             query += `&${k}=${encodeURIComponent(v)}`            
         }
 
-        query.substring(1);
+        query = query.substring(1);
         query = `?${query}`;
 
         return query;

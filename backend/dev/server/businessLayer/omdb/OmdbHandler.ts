@@ -16,7 +16,7 @@ export default class OmdbHandler extends QueryGenerator {
         });
     }
 
-    public async fetchMovies(query:OmdbSingleMovieQuery | OmdbMultipleMovieQuery) {
+    public async fetchMovies(query:OmdbSingleMovieQuery | OmdbMultipleMovieQuery):Promise<Movie[]> {
         return query.hasOwnProperty('s') ? 
             await this.fetchMultipleMovies(query as OmdbMultipleMovieQuery) : 
             await this.fetchSingleMovie(query as OmdbSingleMovieQuery);

@@ -1,6 +1,7 @@
-import { prop, Typegoose } from '@hasezoey/typegoose';
+import { prop, staticMethod, Typegoose } from '@hasezoey/typegoose';
+import { Model } from 'mongoose';
 import OmdbConstants from '../../../server/businessLayer/omdb/enums/OmdbConstants';
-import Constants from '../../../utilities/Constants';
+import { InstanceType } from "@hasezoey/typegoose";
 
 export default class Movie extends Typegoose {
 
@@ -50,6 +51,20 @@ export default class Movie extends Typegoose {
             this.plot = plot;
 
         }
+
+    @staticMethod
+    public static async findMovies<T>(this: Model<InstanceType<T | any>, {}> & T) {
+        return this.find({},{_id:0}).lean().exec() as Promise<Movie[]>;
+    }
+
+    @staticMethod
+    public static async insertMovies<T>(this: Model<InstanceType<T | any>, {}> & T, movies:Movie[]) {
+        await Promise.all(
+            movies.map(movie => this.updateOne(
+                { id:movie.id }, movie, { upsert:true }
+            ))
+        );
+    }
 
     private getRuntimeInMs(runtime:string):number {
         const minutes = Number(runtime.split(" ")[0]);

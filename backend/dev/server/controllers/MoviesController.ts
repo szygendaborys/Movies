@@ -3,6 +3,7 @@ import * as express from "express";
 import Movie from "../../dataModel/test/movies/Movie";
 import OmdbHandler from "../businessLayer/omdb/OmdbHandler";
 import Controller from "../interfaces/controller.interface";
+import MovieRepository from "../repositories/movieRepositories/MovieRepository";
 
 export default class MoviesController implements Controller {
     public path: string = '/movies';
@@ -19,17 +20,12 @@ export default class MoviesController implements Controller {
         this.router.post(this.path, this.postMovie);
     }
 
-    private getMovies = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    public getMovies = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
         try {
-            const exampleData = [{
-                id:'adwd'
-            }, {
-                id:'secondmovieid'
-            }];
-
+            const moviesDTO:Movie[] = await MovieRepository.findMovies();
 
             res.status(200).json({
-                movies: exampleData
+                movies: moviesDTO
             })
         } catch (err) {
             if(!err.statusCode) 
@@ -38,9 +34,11 @@ export default class MoviesController implements Controller {
         }
     };
 
-    private postMovie = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    public postMovie = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
         try {
-            const movies:Movie[] = await this._omdbHandler.fetchMovies(req.body);            
+            const movies = await this._omdbHandler.fetchMovies(req.body);
+            
+            await MovieRepository.insertMovies(movies);
 
             res.status(200).json({
                 moviesAdded: movies

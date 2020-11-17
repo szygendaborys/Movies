@@ -14,5 +14,5 @@ export interface OmdbSingleMovieQuery extends Partial<OmdbMovieQueryOpts> {
 
 export interface OmdbMultipleMovieQuery extends Partial<OmdbMovieQueryOpts> {
     s:string, //title,
-    page?:number, //page number. Default to 1
+    page?:string, //page number. Default to 1
 }
