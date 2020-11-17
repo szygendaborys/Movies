@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "start": "ts-node-dev --respawn dev/server/index.ts",
-    "test": "mocha -r ts-node/register ./dev/test/*test.ts"
+    "test": "mocha -r ts-node/register ./dev/tests/*test.ts"
   },
   "author": "Borys Szygenda",
   "license": "ISC",
@@ -37,6 +37,7 @@
     "@types/mocha": "^7.0.2",
     "@types/mongoose": "^5.10.0",
     "@types/node": "^13.13.30",
-    "@types/node-fetch": "^2.5.7"
+    "@types/node-fetch": "^2.5.7",
+    "@types/sinon": "^9.0.8"
   }
 }
