@@ -1,6 +1,6 @@
 
 import * as express from "express";
-import Movie from "../../dataModel/test/movies/Movie";
+import Movie from "../../dataModel/movies/Movie";
 import OmdbHandler from "../businessLayer/omdb/OmdbHandler";
 import Controller from "../interfaces/controller.interface";
 import MovieRepository from "../repositories/movieRepositories/MovieRepository";

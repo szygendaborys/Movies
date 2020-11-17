@@ -1,6 +1,6 @@
 import { prop, staticMethod, Typegoose } from '@hasezoey/typegoose';
 import { Model } from 'mongoose';
-import OmdbConstants from '../../../server/businessLayer/omdb/enums/OmdbConstants';
+import OmdbConstants from '../../server/businessLayer/omdb/enums/OmdbConstants';
 import { InstanceType } from "@hasezoey/typegoose";
 
 export default class Movie extends Typegoose {

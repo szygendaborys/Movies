@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { type } from 'os';
-import Movie from '../../../dataModel/test/movies/Movie';
+import Movie from '../../../dataModel/movies/Movie';
 import QueryGenerator from '../../../utilities/QueryGenerator';
 import OmdbConstants from './enums/OmdbConstants';
 import { OmdbMultipleMovieQuery, OmdbSingleMovieQuery } from "./interfaces/OmdbMovieQueries.interface";
