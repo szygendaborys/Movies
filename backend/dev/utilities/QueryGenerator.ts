@@ -12,7 +12,7 @@ abstract class QueryGenerator {
         if(opts) this._opts = Object.assign(this._opts, opts);
     }
 
-    protected _getURL(query:{[key:string]:string}, requireApiKey:boolean = false):string {
+    protected _getURL(query:{[key:string]:any}, requireApiKey:boolean = false):string {
         return `${this._api}/${this._generateQueryEntries(query, requireApiKey)}`
     }
 

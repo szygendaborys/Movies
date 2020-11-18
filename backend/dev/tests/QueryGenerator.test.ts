@@ -10,6 +10,7 @@ describe('QueryGenerator tests', () => {
     }
 
     let api = 'http://www.test.com';
+    
     let opts:QueryGeneratorOpts = {
         apikey:'testapikey'
     }
