@@ -3,7 +3,7 @@ import * as express from "express";
 import Movie from "../../dataModel/movies/Movie";
 import OmdbHandler from "../businessLayer/omdb/OmdbHandler";
 import Controller from "../interfaces/controller.interface";
-import MovieRepository from "../repositories/movieRepositories/MovieRepository";
+import MovieRepository from "../repositories/MovieRepository";
 
 export default class MoviesController implements Controller {
     public path: string = '/movies';
@@ -28,8 +28,6 @@ export default class MoviesController implements Controller {
                 movies: moviesDTO
             })
         } catch (err) {
-            if(!err.statusCode) 
-                err.statusCode = 500;
             next(err);
         }
     };
@@ -40,12 +38,10 @@ export default class MoviesController implements Controller {
             
             await MovieRepository.insertMovies(movies);
 
-            res.status(200).json({
+            res.status(201).json({
                 moviesAdded: movies
-            })
+            }).end();
         } catch (err) {
-            if(!err.statusCode) 
-                err.statusCode = 500;
             next(err);
         }
     };

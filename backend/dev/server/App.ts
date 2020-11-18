@@ -10,6 +10,7 @@ export default class App {
         this.app = require('express')();
         this.setMiddleware();
         this.initControllers(controllers);
+        this.initErrorMiddleware();
     }
 
     private initControllers(controllers: Controller[]): void {
@@ -40,9 +41,17 @@ export default class App {
 
     }
 
+    private initErrorMiddleware(): void {
+        this.app.use((error: Error, req: any, res: any, next: any) => {
+            if(!error.message)
+                error.message = 'Error: An undefined error has occurred.';
+            res.status(400).json({error: error.message});
+        });
+    }
+
     public async initDb(startServer: Function): Promise<void> {
         return new Database().connectToDb(startServer)
-            .then((result: any) => {
+            .then(() => {
                 console.log('Mongo connected!');
             })
             .catch((err: any) => {

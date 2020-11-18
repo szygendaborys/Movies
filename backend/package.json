@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "start": "ts-node-dev --respawn dev/server/index.ts",
-    "test": "mocha -r ts-node/register ./dev/tests/*test.ts"
+    "test": "mocha -r ts-node/register ./dev/tests/*test.ts",
+    "start-js": "nodemon --max-old-space-size=8192 build/server/index.js"
   },
   "author": "Borys Szygenda",
   "license": "ISC",
