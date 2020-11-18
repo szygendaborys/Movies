@@ -1,5 +1,7 @@
 import QueryGeneratorOpts from "../server/interfaces/queryGeneratorOpts.interface";
+import QueryParams from "../server/interfaces/queryParams.interface";
 
+// NOTE: This could be achieved also by using a node module called 'querystring' -> require('querystring').stringify(query);
 abstract class QueryGenerator {
 
     protected readonly _api:string;
@@ -12,11 +14,11 @@ abstract class QueryGenerator {
         if(opts) this._opts = Object.assign(this._opts, opts);
     }
 
-    protected _getURL(query:{[key:string]:any}, requireApiKey:boolean = false):string {
+    protected _getURL(query:QueryParams, requireApiKey:boolean = false):string {
         return `${this._api}/${this._generateQueryEntries(query, requireApiKey)}`
     }
 
-    protected _generateQueryEntries(queryParams:{[key:string]:string}, requireApiKey:boolean = false):string {
+    protected _generateQueryEntries(queryParams:QueryParams, requireApiKey:boolean = false):string {
         let query = ``;
 
         if(requireApiKey) query += `&apikey=${encodeURIComponent(this._opts.apikey)}`;

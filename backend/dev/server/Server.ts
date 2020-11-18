@@ -11,7 +11,6 @@ export function startRestServer() {
     application = new App([
         new MoviesController(),
         new CommentsController()
-        // Place other controllers here...
     ]);
     application.initDb(function () {
         application.app.listen(port);
