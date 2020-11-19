@@ -27,14 +27,14 @@ $ npm start
 
 Typescript compilation could be simply achieved by typing
 ```node
-npm run tsc
+$ npm run tsc
 ```
 
 By default `npm start` is designed to run a ts-node-dev server, which uses and dynamically compiles *.ts files. It is also watching for any changes to *.ts files (provides hot reloading of the server after file save).
 
 If you want to run a compiled .js server type
 ```
-npm run start-js
+$ npm run start-js
 ```
 
 Don't forget to compile your project first. :)
@@ -76,7 +76,7 @@ or
 
 In order to run tests attached to this project run:
 ```node
-npm run test
+$ npm run test
 ```
 
 ### Tech
