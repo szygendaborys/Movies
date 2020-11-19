@@ -65,7 +65,7 @@ export default class CommentsController implements Controller {
             const comment = await CommentVoteRepository.findCommentVotes();
 
             res.status(200).json({
-                comments: [comment]
+                comments: comment
             })
         } catch (err) {
             next(err);
