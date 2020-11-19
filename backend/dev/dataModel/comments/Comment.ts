@@ -38,7 +38,7 @@ export default class Comment extends Typegoose {
 
     @staticMethod
     public static async findComments<T>(this: Model<InstanceType<T | any>, {}> & T, query:Object = {}, projection:Object = {}, populateVotes:boolean = false) {
-        const comments:any[] = await this.find(query,projection).lean().exec();
+        const comments = await this.find(query,projection).lean().exec() as Comment[];
 
         if(populateVotes) {
             const voteDeltasMap = await CommentVoteRepository.getVotesDeltaMapForComments(comments);
