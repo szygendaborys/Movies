@@ -51,7 +51,12 @@ This will create the moviesapp image and pull in the necessary dependencies.
 Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8001 of the host to port 8001 of the Docker.
 
 ```sh
-$ docker run -p 8001:8001 --restart="always" moviesapp:latest
+$ docker run --name moviesapp -p 8001:8001 --restart="always" moviesapp:latest
+```
+
+In order to stop the running docker image just write
+```sh
+$ docker stop moviesapp
 ```
 
 ### Accessing the server
