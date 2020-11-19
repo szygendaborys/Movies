@@ -50,7 +50,6 @@ export default class CommentsController implements Controller {
     private postComment = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
         try {
             const { user, comment, movieRef } = req.body;
-
             const commentDTO = new Comment(user, comment, movieRef);
             await CommentRepository.addComment(commentDTO);
 

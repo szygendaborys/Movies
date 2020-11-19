@@ -27,7 +27,7 @@ export default class OmdbHandler extends QueryGenerator {
         return fetch(this._getURL(query, true)).then(async res => {
             const omdbMovieDTO = await res.json();
             if (omdbMovieDTO.Response === 'False') {
-                const errMsg = omdbMovieDTO.Error || 'Error: Udefined error has occurred.';
+                const errMsg = omdbMovieDTO.Error || 'Error: Undefined error has occurred.';
                 throw new Error(errMsg);
             }
 
@@ -40,7 +40,7 @@ export default class OmdbHandler extends QueryGenerator {
             const omdbMoviesDTO:OmdbMultipleMovieResponse = await res.json();
 
             if (omdbMoviesDTO.Response === 'False') {
-                const errMsg = omdbMoviesDTO.Error || 'Error: Udefined error has occurred.';
+                const errMsg = omdbMoviesDTO.Error || 'Error: Undefined error has occurred.';
                 throw new Error(errMsg);
             }
 
