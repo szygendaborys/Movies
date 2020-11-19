@@ -5,7 +5,7 @@ import Comment from '../../dataModel/comments/Comment';
 import CommentRepository from "../repositories/CommentRepository";
 import CommentVote from "../../dataModel/comments/CommentVote";
 import CommentVoteRepository from "../repositories/CommentVoteRepository";
-import CommentValidator from "../businessLayer/omdb/comments/CommentValidator";
+import CommentValidator from "../businessLayer/comments/CommentValidator";
 
 export default class CommentsController implements Controller {
     public path: string = '/comments';

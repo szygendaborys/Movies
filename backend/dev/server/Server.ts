@@ -4,7 +4,8 @@ import MoviesController from './controllers/MoviesController';
 
 require('dotenv').config();
 
-const port = process.env.BACKEND_PORT || '8000';
+const port = process.env.PORT || '8001';
+const host = '0.0.0.0';
 let application: App;
 
 export function startRestServer() {
@@ -13,7 +14,8 @@ export function startRestServer() {
         new CommentsController()
     ]);
     application.initDb(function () {
-        application.app.listen(port);
+        //@ts-ignore expect this error to be happening
+        application.app.listen(port, '0.0.0.0');
         console.log(`Server is listening on port ${port}`);
     }).catch(err => {
         console.log(err);
