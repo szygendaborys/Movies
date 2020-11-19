@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import CommentRepository from "../../../repositories/CommentRepository";
-import CommentVoteRepository from "../../../repositories/CommentVoteRepository";
+import CommentRepository from "../../repositories/CommentRepository";
+import CommentVoteRepository from "../../repositories/CommentVoteRepository";
 
 export default class CommentValidator {
 
