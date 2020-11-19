@@ -1,7 +1,7 @@
 # GET /api/comments/vote
 ---
 
-Gets all comment votes from the database.
+This gets all comment votes from the database.
 ## Request Information
 #### URI Parameters
 

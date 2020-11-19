@@ -1,7 +1,8 @@
 # GET /api/comments/:id
 ---
 
-Gets all comments from the database.
+This gets comments from the database.
+If parameter `:id` is specified it returns the particular comment.
 
 ## Request Information
 #### URI Parameters

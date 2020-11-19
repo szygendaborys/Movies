@@ -15,6 +15,8 @@ None.
 | comment | Comment id             | ObjectId | Required. A MongoDB ObjectId reference to the specified comment '_id'. |
 | add     | Positive/Negative Vote | boolean  | Required. If true - upvote the comment.                  |
 
+Comment "_id" can be found by using GET on `/api/comments`.
+
 ## Request Formats
 `application/json, text/json`
 ##### Sample:
