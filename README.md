@@ -12,7 +12,7 @@ Movies App requires [Node.js](https://nodejs.org/) to run.
 Clone this repository to your local folder.
 
 ```
-$ git clone git clone https://github.com/szygendaborys/Movies
+$ git clone https://github.com/szygendaborys/Movies
 ```
 
 Move to `/movies/backend` folder and install the dependencies and devDependencies and start the server.
