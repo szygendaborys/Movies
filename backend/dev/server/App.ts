@@ -2,6 +2,7 @@ import Database from "./db/Database";
 import Controller from "./interfaces/controller.interface";
 import * as express from 'express';
 import csurf = require('csurf');
+import helmet from 'helmet';
 
 export default class App {
     public app: express.Application;
@@ -22,6 +23,8 @@ export default class App {
     }
 
     private setMiddleware(): void {
+        this.app.use(helmet());
+
         let bodyParser = require('body-parser');
         
         csurf({cookie: true});
