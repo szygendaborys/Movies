@@ -54,7 +54,7 @@ export default class Movie extends Typegoose {
 
     @staticMethod
     public static async findMovies<T>(this: Model<InstanceType<T | any>, {}> & T) {
-        return this.find({},{_id:0}).lean().exec() as Promise<Movie[]>;
+        return this.find({},{}).lean().exec() as Promise<Movie[]>;
     }
 
     @staticMethod

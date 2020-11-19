@@ -17,7 +17,9 @@ None.
 | comment  | Text comment | string   | Required.                                                 |
 | movieRef | Movie id     | ObjectId | Optional.*                                                    |
 
-**Optional*** - Note that it is **not** a movie "id" from Omdb API, but a reference "_id" of the document from the MongoDB.
+**Optional*** - Optional parameter. Note that this is **not** a movie "id" from the Omdb API, but a reference to the "_id" field of the document from MongoDB.
+
+Movie "_id" can be found by using GET on `/api/movies`.
 
 ## Request Formats
 `application/json, text/json`
