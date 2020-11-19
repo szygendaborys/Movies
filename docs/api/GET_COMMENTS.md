@@ -4,6 +4,8 @@
 This gets comments from the database.
 If parameter `:id` is specified it returns the particular comment.
 
+Fields 'votesUp' and 'votesDown' are fetched dynamically counting the subsequent number of votes posted by POST `/api/comment/vote`.
+
 ## Request Information
 #### URI Parameters
 
