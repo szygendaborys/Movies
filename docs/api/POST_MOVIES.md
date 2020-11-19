@@ -49,6 +49,10 @@ None.
 }
 ```
 
-
-
-
+## Common Errors
+```
+{
+    "error": "Error: Invalid query!"
+    "error": "Error: Undefined error has occurred."
+}
+```
