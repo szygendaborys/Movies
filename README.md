@@ -103,7 +103,6 @@ Movies app uses a number of open source projects to work properly:
 * Express.js
 * Docker
 * Mongoose / Typegoose
-* Docker
 * Mocha / Chai / Sinon
 
 
