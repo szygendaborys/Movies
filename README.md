@@ -3,8 +3,11 @@
 ### Heroku
 
 [Live Heroku Link](https://moviesappbs.herokuapp.com)
+
 [Live Heroku Link To Movies)(https://moviesappbs.herokuapp.com/api/movies)
+
 [Live Heroku Link To Comments)(https://moviesappbs.herokuapp.com/api/comments)
+
 [Live Heroku Link To Comment Votes)(https://moviesappbs.herokuapp.com/api/comments/vote)
 
 ### API Documentation
